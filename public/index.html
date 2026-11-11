@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-tema="auto">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Majorelle ERP</title>
+  <script src="/tema.js"></script>
+  <link rel="stylesheet" href="/vendor/phosphor/regular/style.css">
+  <link rel="stylesheet" href="/vendor/phosphor/fill/style.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- TELA DE LOGIN (também usada para criar o administrador no primeiro acesso) -->
+  <div id="login-screen" class="screen active">
+    <div class="login-box">
+      <div class="brand-logo"><i class="ph-fill ph-pizza"></i></div>
+      <h1 class="brand-title">Majorelle</h1>
+      <p class="brand-subtitle" id="login-subtitulo">Gestão de Pizzarias</p>
+
+      <form id="login-form" novalidate>
+        <div class="input-group" id="grupo-nome" hidden>
+          <i class="ph ph-user"></i>
+          <input type="text" id="nome" placeholder="Seu nome" autocomplete="name">
+        </div>
+        <div class="input-group">
+          <i class="ph ph-envelope"></i>
+          <input type="email" id="email" placeholder="E-mail" autocomplete="username" required>
+        </div>
+        <div class="input-group">
+          <i class="ph ph-lock-key"></i>
+          <input type="password" id="senha" placeholder="Senha" autocomplete="current-password" required>
+        </div>
+        <label class="check" id="grupo-lembrar"><input type="checkbox" id="lembrar"> Manter conectado neste aparelho</label>
+        <button type="submit" id="btn-login" class="btn-primary">Acessar sistema</button>
+      </form>
+      <p id="login-msg" class="error-msg" role="alert"></p>
+
+      <div id="google-area" hidden>
+        <div class="ou">ou</div>
+        <div id="google-btn"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TELA PRINCIPAL COM MENU LATERAL -->
+  <div id="dashboard-screen" class="screen">
+    <div class="app-layout">
+
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <i class="ph-fill ph-pizza brand-icon"></i>
+          <span class="brand-name">Majorelle ERP</span>
+        </div>
+
+        <nav class="sidebar-nav" id="menu" aria-label="Menu principal">
+          <a href="#dashboard" class="nav-item" data-aba="dashboard"><i class="ph ph-squares-four"></i> <span>Dashboard</span></a>
+          <a href="#pedidos" class="nav-item" data-aba="pedidos"><i class="ph ph-shopping-cart"></i> <span>Pedidos</span></a>
+          <a href="#novo" class="nav-item" data-aba="novo"><i class="ph ph-plus-circle"></i> <span>Novo pedido</span></a>
+          <a href="#produtos" class="nav-item" data-aba="produtos"><i class="ph ph-cooking-pot"></i> <span>Cardápio / Produtos</span></a>
+          <a href="#clientes" class="nav-item" data-aba="clientes"><i class="ph ph-users"></i> <span>Clientes</span></a>
+          <a href="#estoque" class="nav-item" data-aba="estoque"><i class="ph ph-package"></i> <span>Estoque</span></a>
+          <a href="#config" class="nav-item" data-aba="config"><i class="ph ph-gear"></i> <span>Configurações</span></a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <button type="button" id="btnSair" class="btn-logout"><i class="ph ph-sign-out"></i> <span>Sair</span></button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <h2 id="page-title">Painel de Controle</h2>
+          <div class="user-info">
+            <button id="btnTema" class="icone" title="Alternar modo claro/escuro" aria-label="Alternar modo claro/escuro"></button>
+            <span class="user-display"><strong id="user-nome"></strong><span id="user-perfil"></span></span>
+            <div class="avatar"><i class="ph ph-user"></i></div>
+          </div>
+        </header>
+        <div id="tela"></div>
+      </main>
+
+    </div>
+  </div>
+
+  <div id="avisos" aria-live="polite"></div>
+  <script src="/app.js"></script>
+</body>
+</html>

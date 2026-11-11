@@ -1,0 +1,30 @@
+{
+  "name": "pizzaria-erp",
+  "version": "0.3.0",
+  "description": "Majorelle ERP — sistema de gestão para pizzaria (Windows)",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "seed": "node src/db/seed.js",
+    "test": "node --test",
+    "empacotar": "node scripts/empacotar.mjs",
+    "exe": "npm run empacotar && node scripts/gerar-executaveis.mjs",
+    "test:ui": "node scripts/teste-interface.mjs"
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.3"
+  },
+  "devDependencies": {
+    "@yao-pkg/pkg": "^6.25.0",
+    "esbuild": "^0.28.2",
+    "jsdom": "^31.0.0"
+  }
+}
